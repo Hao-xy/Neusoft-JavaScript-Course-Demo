@@ -5,22 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript HTML DOM</title>
-</head>
-<body>
-    <div style="width: 100%; height: 800px;" id="profile">
-        <p>
-            This is a paragraph1.
-            <span class="username">Jack</span>is 18 years old.
-        </p>
-        <p>
-            This is a paragraph2.
-            <span class="username">Tom</span>is 20 years old.
-        </p>
-        <p>
-            This is a paragraph3.
-            <span class="username">Gavin</span>is 22 years old.
-        </p>
-    </div>
+    
     <script>
         // 查找DOM元素
         // 获取id为profile的元素
@@ -42,19 +27,38 @@
         let selectorCollection = document.querySelectorAll('p span.username');
         console.log(selectorCollection);
 
-        // 简单演示对应Dom操作API
-        // 创建一个element，不会有任何显示，因为没有append
-        // let newEle = document.createElement('div');
-        // 给这个element添加内容文本
-        // newEle.innerText = 'Hello Tom';
-        // 将element添加到profile dom下
-        // profile.appendChild(newEle);
-        // 给element设置背景色
-        // ​newEle.style.background = 'yellow';
-        // 给element设置点击事件
-        // newEle.setAttribute('onClick', 'alert("Test")');
-        // 将element移除
-        // newEle.remove();
+        function tryIt() {
+            // 简单演示对应Dom操作API
+            // 创建一个element，不会有任何显示，因为没有append
+            let newEle = document.createElement('div');
+            // 给这个element添加内容文本
+            newEle.innerText = 'Hello Tom';
+            // 将element添加到profile dom下
+            document.getElementById('profile').appendChild(newEle);
+            // 给element设置背景色
+            newEle.style.color = 'yellow';
+            // 给element设置点击事件
+            newEle.setAttribute('onClick', 'alert("Test")');
+            // 将element移除
+            // newEle.remove();
+        }
     </script>
+</head>
+<body>
+    <div style="width: 100%; height: 800px;" id="profile">
+        <p>
+            This is a paragraph1.
+            <span class="username">Jack</span>is 18 years old.
+        </p>
+        <p>
+            This is a paragraph2.
+            <span class="username">Tom</span>is 20 years old.
+        </p>
+        <p>
+            This is a paragraph3.
+            <span class="username">Gavin</span>is 22 years old.
+        </p>
+        <button onClick="tryIt()">Try It</button>
+    </div>
 </body>
 </html>

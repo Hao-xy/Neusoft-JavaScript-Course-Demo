@@ -1,23 +1,24 @@
-// // 函数声明
-// function showMessage1() {
+// 函数声明
+// (function showMessage1() {
 //     console.log('in a function');
-// }
+// })()
 // // 函数表达式
 // let showMessage2_1 = function () {
 //     console.log('in a function');
-// };
-// let showMessage2_2 = () => {
+// }();
+// let showMessage2_2 = (() => {
 //     console.log('in a function');
-// };
+// })();
 
 
-// // Passing information to Function
+// Passing information to Function
 // function showMessage(message) {
 //     console.log(message);
 // }
 // showMessage('First Message');
 // showMessage('Second Message');
-// // 默认参数
+
+// 默认参数
 // function defaultFun(name = 'Jack') {
 //     console.log(`detail name is ${name}`);
 // }
@@ -39,7 +40,7 @@
 
 
 
-// // Function Return Values
+// Function Return Values
 // function triplePlus(value) {
 //     let newValue = value + value + value;
 //     return newValue;
@@ -48,10 +49,10 @@
 // console.log(triplePlus('3')); // 333
 
 
-// // Function Scope
-// function triplePlus(value) {
-//     let newValue = value + value + value;
-//     return newValue;
-// }
-// triplePlus(3);
-// console.log(newValue); // Reference Error: newValue is undefined
+// Function Scope
+function triplePlus(value) {
+    let newValue = value + value + value;
+    return newValue;
+}
+triplePlus(3);
+console.log(newValue); // Reference Error: newValue is undefined
